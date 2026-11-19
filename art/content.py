@@ -1,19 +1,19 @@
 """Stories for the 18 November 2026 page. Sources and dates: research/sources-part-a.md and -part-b.md."""
 
 KICKER = "THE DAY IN WORLD NEWS"
-COUNTS = "45 STORIES · 7 REGIONS · ONE PAGE"
+COUNTS = "47 STORIES · 7 REGIONS · ONE PAGE"
 TITLE = "Wednesday 18 November 2026"
 SUBTITLE = "Everything on this page happened, or was first reported, on Wednesday 18 November 2026."
 
-REGIONS = [("ASIA", 11), ("EUROPE", 6), ("MIDDLE EAST", 5), ("AMERICAS", 10), ("AFRICA", 7), ("OCEANIA", 4), ("GLOBAL", 2)]
+REGIONS = [("ASIA", 11), ("EUROPE", 7), ("MIDDLE EAST", 5), ("AMERICAS", 11), ("AFRICA", 7), ("OCEANIA", 4), ("GLOBAL", 2)]
 
 UTC = [
     ("GULF · PRE-DAWN", "Kuwait, Bahrain say Iranian drones downed"),
+    ("07:00 UTC · LONDON", "UK inflation rises to 3.6% (ONS)"),
     ("SHENZHEN", "Xi greets Trump on the tarmac; APEC opens"),
     ("10:16 UTC", "Voyager 1 is one light-day from Earth"),
     ("BRUSSELS", "EU proposes new EUR 45bn loan for Kyiv"),
-    ("CARACAS", "Hegseth announces Venezuela military pact"),
-    ("NEW YORK · EVENING", "Van Gogh sells for record $190.4m"),
+    ("19:00 UTC · FED", "Minutes: almost all see more hikes"),
     ("WALL ST · CLOSE", "Dow down 1.1%, Nasdaq up 0.4% (AP)"),
 ]
 
@@ -50,10 +50,10 @@ TILES = [
          head="House Democrats pick Jeffries for Speaker",
          dek="He would be the first Black Speaker; the House votes on 3 January.", pin=(38.9, -77.0),
          o=dict(badge="CAUCUS VOTE", f1="US", bg=(220, 230, 245))),
-    dict(region="AMERICAS", kicker="AMERICAS · DEFENCE", tag="CONFIRMED · REUTERS", art="pact",
-         head="US and Venezuela agree military pact",
-         dek="Hegseth, in Caracas, announces joint training and intel sharing.", pin=(10.5, -66.9),
-         o=dict(badge="HEGSETH IN CARACAS", f1="US", f2="VE")),
+    dict(region="EUROPE", kicker="EUROPE · ECONOMY", tag="CONFIRMED · ONS", art="chart_up",
+         head="UK inflation rises to 3.6% in October",
+         dek="Up from 3.5%; motor fuels gave the biggest push.", pin=(51.5, -0.1),
+         o=dict(badge="CPI 3.6%", bcol=(190, 30, 40), cflag="UK")),
     dict(region="ASIA", kicker="ASIA · LABOUR", tag="CONFIRMED · DAILY STAR", art="protest",
          head="Dhaka wage protests close 55 factories",
          dek="Police report about 300 arrests in Savar and Ashulia.", pin=(23.9, 90.3),
@@ -62,10 +62,10 @@ TILES = [
          head="Cyclone Xavier grows to Category 5",
          dek="Shelters open in the Cook Islands as it nears.", pin=(-21.2, -159.8),
          o=dict(badge="CATEGORY 5", land="COOK IS.")),
-    dict(region="AMERICAS", kicker="AMERICAS · MARKETS", tag="CONFIRMED · AP", art="chart_down",
-         head="Dow falls 1.1% as the Nasdaq edges up",
-         dek="Dow -561 to 50,198; S&P 500 -0.2%; Nasdaq +0.4%.", pin=(40.7, -74.0),
-         o=dict(badge="DOW -1.1%", bcol=(190, 30, 40))),
+    dict(region="AMERICAS", kicker="AMERICAS · MARKETS", tag="CONFIRMED · FED, AP", art="bank",
+         head="Fed minutes: almost all see more hikes",
+         dek="A couple floated a rise of more than 0.25 points.", pin=(38.9, -77.0),
+         o=dict(badge="HIKES LIKELY", bcol=(190, 30, 40), sign="FED")),
 ]
 
 BRIEFS = [
@@ -86,6 +86,8 @@ BRIEFS = [
     ("Tehran", "Denies N. Macedonia plot claim", "MIDDLE EAST"),
     ("Israel", "Reuters: Mossad chief urged US strikes", "MIDDLE EAST"),
     ("Sotheby's", "Van Gogh record: $190.4m", "AMERICAS"),
+    ("Caracas", "Hegseth announces military pact", "AMERICAS"),
+    ("Wall St", "Dow -1.1%, Nasdaq +0.4% (AP)", "AMERICAS"),
     ("Bogota", "US gives Colombia a C-130", "AMERICAS"),
     ("Zapopan", "7-hour cartel gunfight, 3 dead", "AMERICAS"),
     ("Haiti", "Salvadoran troops raze gang HQ", "AMERICAS"),
@@ -106,7 +108,7 @@ BRIEFS = [
 ]
 
 MAPNOTE = "Pins = stories 1 to 11, coloured by region."
-ALSO = "ALSO ON WEDNESDAY 18 NOVEMBER · 34 MORE STORIES"
+ALSO = "ALSO ON WEDNESDAY 18 NOVEMBER · 36 MORE STORIES"
 DATECHECK = ("Left out, first reported before Wednesday: Pattinson cast as Bond (Mon 16), the US strike on Qeshm, the " +
              "Knesset speaker vote, Nvidia's results (Tue 17). Not yet news on Wednesday: the Xi-Trump-Putin talks, " +
              "the ICJ Rohingya ruling, Anthropic's first trade, GTA VI's release (Thu 19), Cyclone Akvan's landfall (Fri 20).")

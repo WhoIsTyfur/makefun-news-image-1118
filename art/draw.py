@@ -619,6 +619,8 @@ def scene(kind, x, y, w, h, o):
         R(cx - h * 0.6, y + h * 0.74, h * 1.2, h * 0.08, fill=(90, 100, 110))
         if o.get("sign"):
             T(cx, y + h * 0.26, o["sign"], font(SANS_B, h * 0.09), (255, 255, 255), "mm")
+    if o.get("cflag"):
+        flag(o["cflag"], x + w - h * 0.42 - 6, y + 6, h * 0.42, h * 0.28)
     # optional text badge
     if o.get("badge"):
         f = font(SANS_B, o.get("bsize", 11))
