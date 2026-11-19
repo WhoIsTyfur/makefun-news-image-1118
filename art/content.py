@@ -36,19 +36,19 @@ LEADS = [
 TILES = [
     dict(region="EUROPE", kicker="EUROPE · UKRAINE AID", tag="CONFIRMED · AFP", art="money",
          head="EU proposes new EUR 45bn loan for Ukraine",
-         dek="Kyiv would repay only once Russia pays reparations.", pin=(50.8, 4.4),
+         dek="Repaid only once Russia pays reparations.", pin=(50.8, 4.4),
          o=dict(amt="€45bn", f1="EU", f2="UA")),
     dict(region="MIDDLE EAST", kicker="MIDDLE EAST · GAZA", tag="CONFIRMED · BBC", art="strip",
          head="Israel launches central Gaza operation",
-         dek="Its first announced push there since the Oct 2025 truce.", pin=(31.4, 34.4),
+         dek="Its first announced push since the 2025 truce.", pin=(31.4, 34.4),
          o=dict(badge="FIRST SINCE TRUCE")),
     dict(region="EUROPE", kicker="EUROPE · UKRAINE WAR", tag="CONFIRMED · AL JAZEERA", art="strike",
          head="Russian strikes kill four in Odesa",
-         dek="Officials say the historic centre was hit three times.", pin=(46.5, 30.7),
+         dek="Officials say the old centre was hit 3 times.", pin=(46.5, 30.7),
          o=dict(badge="4 KILLED", bcol=(190, 30, 40), place="ODESA OLD TOWN")),
     dict(region="AMERICAS", kicker="AMERICAS · US POLITICS", tag="CONFIRMED · AL JAZEERA", art="parliament",
          head="House Democrats pick Jeffries for Speaker",
-         dek="He would be the first Black Speaker; the House votes on 3 January.", pin=(38.9, -77.0),
+         dek="He would be the first Black Speaker.", pin=(38.9, -77.0),
          o=dict(badge="CAUCUS VOTE", f1="US", bg=(220, 230, 245))),
     dict(region="EUROPE", kicker="EUROPE · ECONOMY", tag="CONFIRMED · ONS", art="chart_up",
          head="UK inflation rises to 3.6% in October",
@@ -56,7 +56,7 @@ TILES = [
          o=dict(badge="CPI 3.6%", bcol=(190, 30, 40), cflag="UK")),
     dict(region="ASIA", kicker="ASIA · LABOUR", tag="CONFIRMED · DAILY STAR", art="protest",
          head="Dhaka wage protests close 55 factories",
-         dek="Police report about 300 arrests in Savar and Ashulia.", pin=(23.9, 90.3),
+         dek="Police report about 300 arrests.", pin=(23.9, 90.3),
          o=dict(badge="55 FACTORIES SHUT", bcol=(190, 30, 40), sign="TK 30,000")),
     dict(region="OCEANIA", kicker="OCEANIA · WEATHER", tag="CONFIRMED · RNZ", art="cyclone",
          head="Cyclone Xavier grows to Category 5",
@@ -64,7 +64,7 @@ TILES = [
          o=dict(badge="CATEGORY 5", land="COOK IS.")),
     dict(region="AMERICAS", kicker="AMERICAS · MARKETS", tag="CONFIRMED · FED, AP", art="bank",
          head="Fed minutes: almost all see more hikes",
-         dek="A couple floated a rise of more than 0.25 points.", pin=(38.9, -77.0),
+         dek="A couple floated a bigger rise.", pin=(38.9, -77.0),
          o=dict(badge="HIKES LIKELY", bcol=(190, 30, 40), sign="FED")),
 ]
 
@@ -112,5 +112,5 @@ ALSO = "ALSO ON WEDNESDAY 18 NOVEMBER · 36 MORE STORIES"
 DATECHECK = ("Left out, first reported before Wednesday: Pattinson cast as Bond (Mon 16), the US strike on Qeshm, the " +
              "Knesset speaker vote, Nvidia's results (Tue 17). Not yet news on Wednesday: the Xi-Trump-Putin talks, " +
              "the ICJ Rohingya ruling, Anthropic's first trade, GTA VI's release (Thu 19), Cyclone Akvan's landfall (Fri 20).")
-FOOTER_L = "Sources: AP · Reuters · AFP · BBC · CNN · CNBC · SCMP · Al Jazeera · RNZ · Daily Star · NASA"
-FOOTER_R = "CLAIM = one side's account. Original drawings."
+FOOTER_L = "Sources: AP · Reuters · AFP · BBC · CNN · CNBC · SCMP · Al Jazeera · RNZ · Daily Star · NASA · ONS · Fed"
+FOOTER_R = "Every story is dated 18 Nov by its source · CLAIM = one side's account · original drawings"

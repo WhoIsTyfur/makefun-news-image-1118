@@ -311,9 +311,9 @@ def scene(kind, x, y, w, h, o):
         burst(x + w * 0.38, y + h * 0.25, h * 0.06)
     elif kind == "money":
         R(x, y, w, h, fill=o.get("bg", (225, 232, 245)))
-        flag(o.get("f1", "EU"), x + w * 0.08, y + h * 0.22, h * 0.6 * 1.5, h * 0.6)
-        flag(o.get("f2", "UA"), x + w * 0.92 - h * 0.6 * 1.5, y + h * 0.22, h * 0.6 * 1.5, h * 0.6)
-        ax1, ax2 = x + w * 0.08 + h * 0.9 + 6, x + w * 0.92 - h * 0.9 - 6
+        flag(o.get("f1", "EU"), x + w * 0.06, y + h * 0.27, h * 0.46 * 1.5, h * 0.46)
+        flag(o.get("f2", "UA"), x + w * 0.94 - h * 0.46 * 1.5, y + h * 0.27, h * 0.46 * 1.5, h * 0.46)
+        ax1, ax2 = x + w * 0.06 + h * 0.69 + 6, x + w * 0.94 - h * 0.69 - 6
         L([(ax1, cy), (ax2 - 6, cy)], NAVY, 3)
         poly([(ax2, cy), (ax2 - 10, cy - 7), (ax2 - 10, cy + 7)], NAVY)
         if o.get("amt"):
@@ -779,7 +779,10 @@ def card(s, num, x, y, w, ih, hsize, hlines, dsize, dlines, total_h):
     for l_ in hl:
         T(x, yy, l_, hf, INK)
         yy += hs * 1.14
-    df, dl, ds = fit(s["dek"], SANS, dsize, w - 4, dlines, dsize * 0.8)
+    df, dl, ds = fit(s["dek"], SANS, dsize, w - 4, dlines, dsize * 0.9)
+    if len(dl) > dlines:
+        print("dek too long:", s["dek"])
+        dl = dl[:dlines]
     yy += 2
     for l_ in dl:
         T(x, yy, l_, df, (60, 60, 66))
@@ -819,7 +822,7 @@ def main():
     tw_ = (W - 2 * M - 3 * 12) / 4
     for i, s in enumerate(C.TILES):
         r, c = divmod(i, 4)
-        card(s, len(C.LEADS) + i + 1, M + c * (tw_ + 12), y1 + r * 164, tw_, 70, 17, 2, 10.5, 2, 0)
+        card(s, len(C.LEADS) + i + 1, M + c * (tw_ + 12), y1 + r * 164, tw_, 84, 17, 2, 10.5, 1, 0)
     # bottom: map + briefs
     yb = 778
     L([(M, yb - 6), (W - M, yb - 6)], INK, 1.5)
