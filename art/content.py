@@ -1,11 +1,11 @@
 """Stories for the 18 November 2026 page. Sources and dates: research/sources-part-a.md and -part-b.md."""
 
 KICKER = "THE DAY IN WORLD NEWS"
-COUNTS = "40 STORIES · 7 REGIONS · ONE PAGE"
+COUNTS = "46 STORIES · 7 REGIONS · ONE PAGE"
 TITLE = "Wednesday 18 November 2026"
 SUBTITLE = "Everything on this page happened, or was first reported, on Wednesday 18 November 2026."
 
-REGIONS = [("ASIA", 8), ("EUROPE", 6), ("MIDDLE EAST", 4), ("AMERICAS", 9), ("AFRICA", 7), ("OCEANIA", 4), ("GLOBAL", 2)]
+REGIONS = [("ASIA", 11), ("EUROPE", 6), ("MIDDLE EAST", 5), ("AMERICAS", 11), ("AFRICA", 7), ("OCEANIA", 4), ("GLOBAL", 2)]
 
 UTC = [
     ("GULF · PRE-DAWN", "Kuwait, Bahrain say Iranian drones downed"),
@@ -21,7 +21,7 @@ LEADS = [
     dict(region="ASIA", kicker="ASIA · APEC SUMMIT", tag="CONFIRMED · CNBC, SCMP", art="summit",
          head="Xi greets Trump on the tarmac in Shenzhen",
          dek="A rare airport welcome as China hosts APEC; Xi opens the summit warning against trade barriers.",
-         pin=(22.5, 114.1), o=dict(badge="XI MEETS TRUMP", bsize=13, caption="SHENZHEN · APEC LEADERS' WEEK", f1="CN", f2="US")),
+         pin=(22.5, 114.1), o=dict(badge="XI MEETS TRUMP", bsize=13, caption="SHENZHEN · APEC LEADERS' WEEK", f1="CN", f2="US", n1="XI", n2="TRUMP")),
     dict(region="MIDDLE EAST", kicker="MIDDLE EAST · IRAN", tag="CLAIM · KUWAIT, BAHRAIN", art="gulf",
          head="Kuwait and Bahrain intercept Iranian drones",
          dek="Both say they downed the drones, a day after a US strike on Iran's Qeshm island.",
@@ -42,18 +42,18 @@ TILES = [
          head="Israel launches central Gaza operation",
          dek="Its first announced push there since the Oct 2025 truce.", pin=(31.4, 34.4),
          o=dict(badge="FIRST SINCE TRUCE")),
-    dict(region="EUROPE", kicker="EUROPE · UKRAINE WAR", tag="CONFIRMED · AL JAZEERA", art="drones_night",
+    dict(region="EUROPE", kicker="EUROPE · UKRAINE WAR", tag="CONFIRMED · AL JAZEERA", art="strike",
          head="Russian strikes kill four in Odesa",
          dek="Officials say the historic centre was hit three times.", pin=(46.5, 30.7),
-         o=dict(badge="4 KILLED", bcol=(190, 30, 40))),
+         o=dict(badge="4 KILLED", bcol=(190, 30, 40), place="ODESA OLD TOWN")),
     dict(region="AMERICAS", kicker="AMERICAS · ART", tag="CONFIRMED · AFP", art="art",
          head="Van Gogh sells for a record $190.4m",
          dek="'Blossoming Chestnut Trees' at Sotheby's, New York.", pin=(40.7, -74.0),
          o=dict(badge="$190.4m RECORD")),
-    dict(region="AMERICAS", kicker="AMERICAS · DEFENCE", tag="CONFIRMED · REUTERS", art="parliament",
+    dict(region="AMERICAS", kicker="AMERICAS · DEFENCE", tag="CONFIRMED · REUTERS", art="pact",
          head="US and Venezuela agree military pact",
          dek="Hegseth, in Caracas, announces joint training and intel sharing.", pin=(10.5, -66.9),
-         o=dict(badge="HEGSETH IN CARACAS", f1="US")),
+         o=dict(badge="HEGSETH IN CARACAS", f1="US", f2="VE")),
     dict(region="ASIA", kicker="ASIA · LABOUR", tag="CONFIRMED · DAILY STAR", art="protest",
          head="Dhaka wage protests close 55 factories",
          dek="Police report about 300 arrests in Savar and Ashulia.", pin=(23.9, 90.3),
@@ -69,11 +69,14 @@ TILES = [
 ]
 
 BRIEFS = [
+    ("APEC", "Xi opens summit, decries trade walls", "ASIA"),
     ("APEC", "Korea's Lee at Xi's dinner", "ASIA"),
     ("Kashmir", "Militant chief killed in mosque", "ASIA"),
     ("Narail", "Two BNP members killed", "ASIA"),
     ("Gopalganj", "BNP MP's clinic set on fire", "ASIA"),
     ("Dhaka", "Stun grenades at garment strike", "ASIA"),
+    ("Chandpur", "Dipu Moni's home burned", "ASIA"),
+    ("N'ganj", "Ex-MP Osman's home torched", "ASIA"),
     ("Jakarta", "Surprise rate rise to 6%", "ASIA"),
     ("Berlin", "Zelensky asks for air defences", "EUROPE"),
     ("Rivne", "Strikes cut power to 80+ towns", "EUROPE"),
@@ -81,6 +84,7 @@ BRIEFS = [
     ("Kerch", "Russia shuts Crimean Bridge", "EUROPE"),
     ("Riyadh", "Saudis say Houthi missiles hit", "MIDDLE EAST"),
     ("Tehran", "Denies N. Macedonia plot claim", "MIDDLE EAST"),
+    ("Israel", "Reuters: Mossad chief urged US strikes", "MIDDLE EAST"),
     ("Alaska", "Peltola flips Senate seat (D)", "AMERICAS"),
     ("US House", "Democrats pick Jeffries, 251-11", "AMERICAS"),
     ("Bogota", "US gives Colombia a C-130", "AMERICAS"),
@@ -88,6 +92,8 @@ BRIEFS = [
     ("Haiti", "Salvadoran troops raze gang HQ", "AMERICAS"),
     ("Wall St", "Dow -1.1%, Nasdaq +0.4% (AP)", "AMERICAS"),
     ("Amazon", "Uncontacted group pictured", "AMERICAS"),
+    ("Brasilia", "Police probe US donors over vote", "AMERICAS"),
+    ("Argentina", "Wholesale inflation slows to 1.6%", "AMERICAS"),
     ("Pretoria", "Nigeria's envoy summoned", "AFRICA"),
     ("Plateau", "Night raid on village kills 8+", "AFRICA"),
     ("Abuja", "State Police Bill to Tinubu", "AFRICA"),
@@ -101,9 +107,9 @@ BRIEFS = [
 ]
 
 MAPNOTE = "Pins = stories 1 to 11, coloured by region."
-ALSO = "ALSO ON WEDNESDAY 18 NOVEMBER · 29 MORE STORIES"
-DATECHECK = ("Left out, first reported before Wednesday: the US strike on Qeshm, the Knesset speaker vote, Nvidia's "
-             "results (all Tue 17). Not yet news on Wednesday: the Xi-Trump-Putin talks and the ICJ Rohingya "
-             "ruling (Thu 19), GTA VI's release (Thu 19), Cyclone Akvan's landfall (Fri 20).")
+ALSO = "ALSO ON WEDNESDAY 18 NOVEMBER · 35 MORE STORIES"
+DATECHECK = ("Left out, first reported before Wednesday: Pattinson cast as Bond (Mon 16), the US strike on Qeshm, the " +
+             "Knesset speaker vote, Nvidia's results (Tue 17). Not yet news on Wednesday: the Xi-Trump-Putin talks, " +
+             "the ICJ Rohingya ruling, Anthropic's first trade, GTA VI's release (Thu 19), Cyclone Akvan's landfall (Fri 20).")
 FOOTER_L = "Sources: AP · Reuters · AFP · BBC · CNN · CNBC · SCMP · Al Jazeera · RNZ · Daily Star · NASA"
 FOOTER_R = "CLAIM = one side's account. Original drawings."

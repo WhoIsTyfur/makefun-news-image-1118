@@ -137,6 +137,7 @@ def flag(code, x, y, w, h):
         "SD": [(210, 16, 52), (255, 255, 255), (0, 0, 0)], "AR": [(116, 172, 223), (255, 255, 255), (116, 172, 223)],
         "ID": [(206, 17, 38), (255, 255, 255)], "PL": [(255, 255, 255), (220, 20, 60)],
         "AT": [(237, 41, 57), (255, 255, 255), (237, 41, 57)], "EG": [(206, 17, 38), (255, 255, 255), (0, 0, 0)],
+        "VE": [(255, 204, 0), (0, 36, 125), (207, 20, 43)],
     }
     stripes_v = {
         "FR": [(0, 85, 164), (255, 255, 255), (239, 65, 53)], "IT": [(0, 146, 70), (255, 255, 255), (206, 43, 55)],
@@ -247,6 +248,13 @@ def scene(kind, x, y, w, h, o):
         poly([(px + w * 0.15, py + h * 0.1), (px + w * 0.24, py + h * 0.1), (px + w * 0.1, py + h * 0.22)], (220, 220, 228))
         person(cx - h * 0.1, y + h * 0.95, h * 0.6, (35, 35, 45), arm=cx)
         person(cx + h * 0.1, y + h * 0.95, h * 0.6, (30, 40, 70), arm=cx)
+        for nm, px_ in ((o.get("n1"), cx - h * 0.16), (o.get("n2"), cx + h * 0.16)):
+            if nm:
+                nf = font(SANS_B, h * 0.1)
+                bw2 = tw(nm, nf) + 8
+                R(px_ - bw2 / 2, y + h * 0.17, bw2, h * 0.14, fill=(255, 255, 255), r=2)
+                T(px_, y + h * 0.24, nm, nf, INK, "mm")
+                poly([(px_ - 4, y + h * 0.31), (px_ + 4, y + h * 0.31), (px_, y + h * 0.35)], (255, 255, 255))
         flag(o.get("f1", "CN"), x + w * 0.66, y + h * 0.5, h * 0.24, h * 0.16)
         flag(o.get("f2", "US"), x + w * 0.66 + h * 0.3, y + h * 0.5, h * 0.24, h * 0.16)
     elif kind == "gulf":
@@ -537,7 +545,10 @@ def scene(kind, x, y, w, h, o):
         poly([(x + w * 0.42, y), (x + w * 0.52, y), (x + w * 0.7, y + h), (x + w * 0.6, y + h)], (240, 200, 160))
         L([(x + w * 0.52, y), (x + w * 0.7, y + h)], (90, 90, 90), 1.2)
         R(x + w * 0.49, y + h * 0.42, w * 0.12, h * 0.18, fill=(200, 60, 50))
-        T(x + w * 0.66, y + h * 0.5, o.get("area", "CENTRAL GAZA"), font(SANS_B, h * 0.11), (90, 30, 30), "lm")
+        lf = font(SANS_B, h * 0.12)
+        lab = o.get("area", "CENTRAL GAZA")
+        R(x + w * 0.64, y + h * 0.18, tw(lab, lf) + 8, h * 0.18, fill=(255, 255, 255), r=2)
+        T(x + w * 0.64 + 4, y + h * 0.27, lab, lf, (150, 30, 30), "lm")
         for i in range(3):
             L([(x + w * (0.8 - 0.04 * i), y + h * (0.55 + 0.1 * i)), (x + w * (0.64 - 0.02 * i), y + h * (0.53 + 0.05 * i))],
               (60, 70, 40), 2)
@@ -558,6 +569,36 @@ def scene(kind, x, y, w, h, o):
                 E(fx + fw * tx_ + rnd.uniform(-fw * 0.15, fw * 0.15), fy + fh * (0.3 + rnd.uniform(-0.15, 0.15)),
                   rnd.uniform(2, 4.5), fill=rnd.choice([(250, 250, 245), (240, 200, 210), (90, 140, 70)]))
         R(cx - h * 0.25, y + h * 0.9, h * 0.5, h * 0.08, fill=(240, 230, 200))
+    elif kind == "strike":
+        R(x, y, w, h, fill=(70, 75, 95))
+        for i in range(3):
+            E(x + w * (0.55 + 0.08 * i), y + h * (0.32 - 0.08 * i), h * (0.14 + 0.05 * i), fill=(105, 100, 105))
+        bx_ = x + w * 0.08
+        R(bx_, y + h * 0.35, w * 0.84, h * 0.65, fill=(225, 205, 165))
+        for i in range(7):
+            for j in range(2):
+                wx = bx_ + w * 0.05 + i * w * 0.11
+                wy = y + h * (0.45 + 0.25 * j)
+                R(wx, wy, w * 0.05, h * 0.16, fill=(80, 80, 95), r=w * 0.02)
+        R(bx_ - 3, y + h * 0.33, w * 0.84 + 6, h * 0.05, fill=(190, 170, 130))
+        poly([(x + w * 0.5, y + h * 0.33), (x + w * 0.62, y + h * 0.5), (x + w * 0.72, y + h * 0.36), (x + w * 0.78, y + h * 0.6),
+              (x + w * 0.68, y + h * 0.75), (x + w * 0.56, y + h * 0.62)], (60, 50, 50))
+        burst(x + w * 0.64, y + h * 0.42, h * 0.16, (255, 140, 30), (255, 230, 160))
+        if o.get("place"):
+            lf = font(SANS_B, h * 0.12)
+            R(x + w * 0.08, y + h * 0.78, tw(o["place"], lf) + 10, h * 0.17, fill=(255, 255, 255), r=2)
+            T(x + w * 0.08 + 5, y + h * 0.865, o["place"], lf, INK, "lm")
+    elif kind == "pact":
+        R(x, y, w, h, fill=o.get("bg", (228, 232, 240)))
+        fh = h * 0.42
+        flag(o.get("f1", "US"), x + w * 0.05, y + h * 0.18, fh * 1.5, fh)
+        flag(o.get("f2", "VE"), x + w * 0.95 - fh * 1.5, y + h * 0.18, fh * 1.5, fh)
+        R(cx - h * 0.3, y + h * 0.1, h * 0.6, h * 0.8, fill=(255, 255, 255), outline=(120, 120, 130), width=1)
+        for i in range(5):
+            R(cx - h * 0.22, y + h * (0.2 + 0.09 * i), h * (0.44 if i % 2 else 0.36), h * 0.03, fill=(170, 170, 180))
+        L([(cx - h * 0.2, y + h * 0.76), (cx - h * 0.1, y + h * 0.7), (cx, y + h * 0.77), (cx + h * 0.1, y + h * 0.69),
+           (cx + h * 0.2, y + h * 0.75)], NAVY, 1.6)
+        L([(cx + h * 0.22, y + h * 0.82), (cx + h * 0.38, y + h * 0.58)], (40, 40, 40), 2.5)
     elif kind == "health":
         R(x, y, w, h, fill=(225, 238, 245))
         R(cx - h * 0.1, cy - h * 0.3, h * 0.2, h * 0.6, fill=(40, 140, 120))
@@ -671,10 +712,12 @@ def masthead():
 
 
 def region_bar(y):
-    total = sum(n for _, n in C.REGIONS)
+    span = W - 2 * M
+    raw = [max(n / sum(k for _, k in C.REGIONS) * span, 92) for _, n in C.REGIONS]
+    scale = span / sum(raw)
     x = M
-    for name, n in C.REGIONS:
-        w = (W - 2 * M) * n / total
+    for (name, n), rw in zip(C.REGIONS, raw):
+        w = rw * scale
         R(x, y, w + 0.5, 18, fill=REGION_COL[name])
         T(x + w / 2, y + 9, f"{name} {n}", font(SANS_B, 10.5), (255, 255, 255), "mm")
         x += w
@@ -684,7 +727,7 @@ def utc_strip(y, h=40):
     R(M, y, W - 2 * M, h, fill=(255, 255, 255), outline=RULE, width=1)
     R(M, y, 70, h, fill=RED)
     T(M + 35, y + h / 2 - 7, "THE DAY", font(SANS_B, 10.5), (255, 255, 255), "mm")
-    T(M + 35, y + h / 2 + 7, "IN UTC", font(SANS_B, 10.5), (255, 255, 255), "mm")
+    T(M + 35, y + h / 2 + 7, "IN ORDER", font(SANS_B, 10.5), (255, 255, 255), "mm")
     n = len(C.UTC)
     cw = (W - 2 * M - 70) / n
     for i, (t, line) in enumerate(C.UTC):
