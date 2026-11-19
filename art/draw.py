@@ -242,10 +242,19 @@ def scene(kind, x, y, w, h, o):
         poly([(cx - w * 0.06, y + h * 0.7), (cx + w * 0.06, y + h * 0.7), (cx + w * 0.22, y + h), (cx - w * 0.22, y + h)],
              (190, 30, 40))
         # plane
-        px, py = x + w * 0.05, y + h * 0.42
-        R(px, py, w * 0.36, h * 0.12, fill=(245, 245, 250), r=h * 0.06)
-        R(px + w * 0.02, py + h * 0.035, w * 0.3, h * 0.025, fill=(60, 90, 160))
-        poly([(px + w * 0.15, py + h * 0.1), (px + w * 0.24, py + h * 0.1), (px + w * 0.1, py + h * 0.22)], (220, 220, 228))
+        px, py = x + w * 0.04, y + h * 0.5
+        fl = w * 0.36
+        poly([(px + fl * 0.02, py), (px + fl * 0.16, py - h * 0.2), (px + fl * 0.26, py - h * 0.2), (px + fl * 0.2, py)],
+             (40, 70, 140))
+        R(px, py, fl, h * 0.12, fill=(248, 248, 252), r=h * 0.06)
+        E(px + fl - h * 0.02, py + h * 0.06, h * 0.06, fill=(248, 248, 252))
+        R(px, py + h * 0.075, fl, h * 0.02, fill=(40, 70, 140))
+        for i in range(9):
+            E(px + fl * (0.25 + 0.075 * i), py + h * 0.04, h * 0.012, fill=(70, 90, 120))
+        poly([(px + fl * 0.4, py + h * 0.08), (px + fl * 0.6, py + h * 0.08), (px + fl * 0.34, py + h * 0.26),
+              (px + fl * 0.26, py + h * 0.26)], (200, 205, 215))
+        L([(px + fl * 0.75, py + h * 0.12), (px + fl * 0.75, y + h * 0.95)], (120, 120, 120), 1.5)
+        R(px + fl * 0.7, y + h * 0.95 - h * 0.25, fl * 0.1, h * 0.25, fill=(170, 170, 175))
         person(cx - h * 0.1, y + h * 0.95, h * 0.6, (35, 35, 45), arm=cx)
         person(cx + h * 0.1, y + h * 0.95, h * 0.6, (30, 40, 70), arm=cx)
         for nm, px_ in ((o.get("n1"), cx - h * 0.16), (o.get("n2"), cx + h * 0.16)):
@@ -804,13 +813,13 @@ def main():
     y0 = 196
     lw = (W - 2 * M - 2 * 12) / 3
     for i, s in enumerate(C.LEADS):
-        card(s, i + 1, M + i * (lw + 12), y0, lw, 132, 22.5, 2, 12.5, 2, 0)
+        card(s, i + 1, M + i * (lw + 12), y0, lw, 128, 25, 2, 12.5, 2, 0)
     # tiles
     y1 = 444
     tw_ = (W - 2 * M - 3 * 12) / 4
     for i, s in enumerate(C.TILES):
         r, c = divmod(i, 4)
-        card(s, len(C.LEADS) + i + 1, M + c * (tw_ + 12), y1 + r * 164, tw_, 72, 16, 2, 10.5, 2, 0)
+        card(s, len(C.LEADS) + i + 1, M + c * (tw_ + 12), y1 + r * 164, tw_, 70, 17, 2, 10.5, 2, 0)
     # bottom: map + briefs
     yb = 778
     L([(M, yb - 6), (W - M, yb - 6)], INK, 1.5)
