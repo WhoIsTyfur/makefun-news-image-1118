@@ -1,11 +1,11 @@
 """Stories for the 18 November 2026 page. Sources and dates: research/sources-part-a.md and -part-b.md."""
 
 KICKER = "THE DAY IN WORLD NEWS"
-COUNTS = "46 STORIES · 7 REGIONS · ONE PAGE"
+COUNTS = "45 STORIES · 7 REGIONS · ONE PAGE"
 TITLE = "Wednesday 18 November 2026"
 SUBTITLE = "Everything on this page happened, or was first reported, on Wednesday 18 November 2026."
 
-REGIONS = [("ASIA", 11), ("EUROPE", 6), ("MIDDLE EAST", 5), ("AMERICAS", 11), ("AFRICA", 7), ("OCEANIA", 4), ("GLOBAL", 2)]
+REGIONS = [("ASIA", 11), ("EUROPE", 6), ("MIDDLE EAST", 5), ("AMERICAS", 10), ("AFRICA", 7), ("OCEANIA", 4), ("GLOBAL", 2)]
 
 UTC = [
     ("GULF · PRE-DAWN", "Kuwait, Bahrain say Iranian drones downed"),
@@ -30,7 +30,7 @@ LEADS = [
     dict(region="GLOBAL", kicker="SPACE · NASA", tag="CONFIRMED · NASA, CNN", art="space",
          head="Voyager 1 is the first craft one light-day from Earth",
          dek="Launched in 1977, it is so far away that a radio signal now takes 24 hours each way.",
-         pin=(28.5, -80.6), o=dict(badge="1 LIGHT-DAY", bsize=13, caption="10:16 UTC · DEEP SPACE")),
+         pin=(28.5, -80.6), o=dict(badge="1 LIGHT-DAY", badge2="25.9bn km", bsize=13, caption="10:16 UTC · DEEP SPACE")),
 ]
 
 TILES = [
@@ -46,10 +46,10 @@ TILES = [
          head="Russian strikes kill four in Odesa",
          dek="Officials say the historic centre was hit three times.", pin=(46.5, 30.7),
          o=dict(badge="4 KILLED", bcol=(190, 30, 40), place="ODESA OLD TOWN")),
-    dict(region="AMERICAS", kicker="AMERICAS · ART", tag="CONFIRMED · AFP", art="art",
-         head="Van Gogh sells for a record $190.4m",
-         dek="'Blossoming Chestnut Trees' at Sotheby's, New York.", pin=(40.7, -74.0),
-         o=dict(badge="$190.4m RECORD")),
+    dict(region="AMERICAS", kicker="AMERICAS · US POLITICS", tag="CONFIRMED · AL JAZEERA", art="parliament",
+         head="House Democrats pick Jeffries for Speaker",
+         dek="He would be the first Black Speaker; the House votes on 3 January.", pin=(38.9, -77.0),
+         o=dict(badge="CAUCUS VOTE", f1="US", bg=(220, 230, 245))),
     dict(region="AMERICAS", kicker="AMERICAS · DEFENCE", tag="CONFIRMED · REUTERS", art="pact",
          head="US and Venezuela agree military pact",
          dek="Hegseth, in Caracas, announces joint training and intel sharing.", pin=(10.5, -66.9),
@@ -57,15 +57,15 @@ TILES = [
     dict(region="ASIA", kicker="ASIA · LABOUR", tag="CONFIRMED · DAILY STAR", art="protest",
          head="Dhaka wage protests close 55 factories",
          dek="Police report about 300 arrests in Savar and Ashulia.", pin=(23.9, 90.3),
-         o=dict(badge="55 FACTORIES SHUT", bcol=(190, 30, 40))),
+         o=dict(badge="55 FACTORIES SHUT", bcol=(190, 30, 40), sign="TK 30,000")),
     dict(region="OCEANIA", kicker="OCEANIA · WEATHER", tag="CONFIRMED · RNZ", art="cyclone",
          head="Cyclone Xavier grows to Category 5",
          dek="Shelters open in the Cook Islands as it nears.", pin=(-21.2, -159.8),
-         o=dict(badge="CATEGORY 5")),
-    dict(region="AFRICA", kicker="AFRICA · CRICKET", tag="CONFIRMED · AFP", art="sport",
-         head="Litton Das sets a Test world record",
-         dek="Eight dismissals in an innings v South Africa.", pin=(-26.2, 28.0),
-         o=dict(badge="8 DISMISSALS", ball="trophy")),
+         o=dict(badge="CATEGORY 5", land="COOK IS.")),
+    dict(region="AMERICAS", kicker="AMERICAS · MARKETS", tag="CONFIRMED · AP", art="chart_down",
+         head="Dow falls 1.1% as the Nasdaq edges up",
+         dek="Dow -561 to 50,198; S&P 500 -0.2%; Nasdaq +0.4%.", pin=(40.7, -74.0),
+         o=dict(badge="DOW -1.1%", bcol=(190, 30, 40))),
 ]
 
 BRIEFS = [
@@ -85,15 +85,14 @@ BRIEFS = [
     ("Riyadh", "Saudis say Houthi missiles hit", "MIDDLE EAST"),
     ("Tehran", "Denies N. Macedonia plot claim", "MIDDLE EAST"),
     ("Israel", "Reuters: Mossad chief urged US strikes", "MIDDLE EAST"),
-    ("Alaska", "Peltola flips Senate seat (D)", "AMERICAS"),
-    ("US House", "Democrats pick Jeffries, 251-11", "AMERICAS"),
+    ("Sotheby's", "Van Gogh record: $190.4m", "AMERICAS"),
     ("Bogota", "US gives Colombia a C-130", "AMERICAS"),
     ("Zapopan", "7-hour cartel gunfight, 3 dead", "AMERICAS"),
     ("Haiti", "Salvadoran troops raze gang HQ", "AMERICAS"),
-    ("Wall St", "Dow -1.1%, Nasdaq +0.4% (AP)", "AMERICAS"),
     ("Amazon", "Uncontacted group pictured", "AMERICAS"),
     ("Brasilia", "Police probe US donors over vote", "AMERICAS"),
     ("Argentina", "Wholesale inflation slows to 1.6%", "AMERICAS"),
+    ("Johannesburg", "Litton Das Test record", "AFRICA"),
     ("Pretoria", "Nigeria's envoy summoned", "AFRICA"),
     ("Plateau", "Night raid on village kills 8+", "AFRICA"),
     ("Abuja", "State Police Bill to Tinubu", "AFRICA"),
@@ -107,7 +106,7 @@ BRIEFS = [
 ]
 
 MAPNOTE = "Pins = stories 1 to 11, coloured by region."
-ALSO = "ALSO ON WEDNESDAY 18 NOVEMBER · 35 MORE STORIES"
+ALSO = "ALSO ON WEDNESDAY 18 NOVEMBER · 34 MORE STORIES"
 DATECHECK = ("Left out, first reported before Wednesday: Pattinson cast as Bond (Mon 16), the US strike on Qeshm, the " +
              "Knesset speaker vote, Nvidia's results (Tue 17). Not yet news on Wednesday: the Xi-Trump-Putin talks, " +
              "the ICJ Rohingya ruling, Anthropic's first trade, GTA VI's release (Thu 19), Cyclone Akvan's landfall (Fri 20).")

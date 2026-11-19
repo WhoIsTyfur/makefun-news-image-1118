@@ -336,6 +336,9 @@ def scene(kind, x, y, w, h, o):
         E(ccx, ccy, h * 0.05, fill=(240, 245, 250))
         L([(ccx + h * 0.2, ccy - h * 0.1), (x + w * 0.66, y + h * 0.3)], (255, 220, 80), 2)
         poly([(x + w * 0.68, y + h * 0.27), (x + w * 0.64, y + h * 0.26), (x + w * 0.66, y + h * 0.33)], (255, 220, 80))
+        if o.get("land"):
+            lf = font(SANS_B, h * 0.11)
+            T(x + w * 0.86, y + h * 0.85, o["land"], lf, (40, 60, 30), "mm")
     elif kind == "court":
         R(x, y, w, h, fill=o.get("bg", (226, 220, 205)))
         bx, bw_ = cx - h * 0.6, h * 1.2
@@ -444,9 +447,12 @@ def scene(kind, x, y, w, h, o):
                 py = y + h * (0.5 + 0.12 * row)
                 E(px, py, h * 0.06, fill=(rnd.randint(40, 120), rnd.randint(30, 80), rnd.randint(30, 70)))
                 R(px - h * 0.07, py + h * 0.05, h * 0.14, h * 0.2, fill=(60, 60, 80))
-        for i, a in enumerate([0.15, 0.45, 0.75]):
+        for i, a in enumerate([0.6, 0.83] if o.get("badge") else [0.15, 0.45, 0.75]):
             L([(x + w * a + 10, y + h * 0.3), (x + w * a + 10, y + h * 0.6)], (110, 80, 50), 1.5)
-            R(x + w * a - 8, y + h * 0.12, 36, h * 0.2, fill=(255, 255, 255), outline=(60, 60, 60), width=0.8)
+            pw_ = 50 if o.get("sign") else 36
+            R(x + w * a + 10 - pw_ / 2, y + h * 0.1, pw_, h * 0.22, fill=(255, 255, 255), outline=(60, 60, 60), width=0.8)
+            if o.get("sign"):
+                T(x + w * a + 10, y + h * 0.21, o["sign"], font(SANS_B, h * 0.12), RED, "mm")
     elif kind == "oil":
         R(x, y, w, h, fill=(240, 220, 170))
         L([(x + w * 0.2, y + h * 0.9), (x + w * 0.3, y + h * 0.15), (x + w * 0.4, y + h * 0.9)], (60, 50, 40), 2)
